@@ -1,0 +1,23 @@
+.product-container{
+    border-right: 1px solid lightgray;
+    margin-right: 5px;
+    margin-left: 50px;
+    width: 70%;
+}
+.twin-container {
+    display: flex;
+    column-gap: 20px;
+}
+.cart-container {
+    width: 30%;
+    text-align: center;
+}
+.confirmation-message {
+    margin: 100px;
+    text-align: center;
+}
+.confirmation-message img {
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
+}
