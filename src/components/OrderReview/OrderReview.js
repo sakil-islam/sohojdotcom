@@ -9,17 +9,16 @@ import ReviewItem from "../ReviewItem/ReviewItem";
 import Cart from "../Cart/Cart";
 import "./OrderReview.css";
 import Confirmation from "../../images/giphy.gif";
+import { useNavigate } from 'react-router-dom';
 
 const OrderReview = () => {
   const [orderPlace, setOrderPlace] = useState(false);
 
   const [cart, setCart] = useState([]);
+  const history = useNavigate();
 
-  const handlePlaceOrder = () => {
-    console.log(cart);
-    setCart([]);
-    setOrderPlace(true);
-    processOrder();
+  const handleProceedCheckout = () => {
+    history('/shipment');
   };
 
   const removeProduct = (productKey) => {
@@ -59,8 +58,8 @@ const OrderReview = () => {
       </div>
       <div className="cart-container">
         <Cart cart={cart}>
-          <button className="btn-regular" onClick={handlePlaceOrder}>
-            Place Order
+          <button className="btn-regular" onClick={handleProceedCheckout}>
+            Proceed Checkout
           </button>
         </Cart>
       </div>
