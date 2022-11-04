@@ -9,16 +9,16 @@ import ReviewItem from "../ReviewItem/ReviewItem";
 import Cart from "../Cart/Cart";
 import "./OrderReview.css";
 import Confirmation from "../../images/giphy.gif";
-import { useNavigate } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 const OrderReview = () => {
   const [orderPlace, setOrderPlace] = useState(false);
 
   const [cart, setCart] = useState([]);
-  const history = useNavigate();
+  const history = useHistory();
 
   const handleProceedCheckout = () => {
-    history('/shipment');
+    history.push('/shipment');
   };
 
   const removeProduct = (productKey) => {

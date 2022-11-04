@@ -14,7 +14,6 @@ const Cart = (props) => {
         }
         total = total + product.price * product.quantity;
         totalQuantity = totalQuantity + product.quantity;
-        debugger;
     }
 
     const shipping = total > 0 ? 15 : 0;
