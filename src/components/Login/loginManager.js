@@ -61,6 +61,7 @@ export const createUserWithEmailAndPassword = (name, email, password) => {
       newUserInfo.success = true;
       newUserInfo.error = "";
       updateUserName(name);
+      verifyEmail();
       return newUserInfo;
     })
     .catch((error) => {
@@ -103,3 +104,24 @@ export const updateUserName = (name) => {
       console.log(error);
     });
 };
+
+export const verifyEmail = () => {
+  var user = firebase.auth.currentUser;
+
+  user.sendEmailVerification().then(res => {
+    console.log(res);
+  })
+  .catch((error) => {
+    console.log(error);
+  });
+}
+
+export const resetPassword = email => {
+  let auth = firebase.auth();
+  auth.sendPasswordResetEmail(email).then(res => {
+    console.log(res);
+  })
+  .catch((error) => {
+    console.log(error);
+  });
+}
